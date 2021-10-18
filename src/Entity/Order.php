@@ -21,6 +21,9 @@ class Order
     /** @var string */
     private $country;
 
+    /** @var string */
+    private $shippingProviderKey;
+
     /**
      * Shipping provider key.
      * Other options might be `dhl`, `omniva`
@@ -30,7 +33,15 @@ class Order
      */
     public function getShippingProviderKey(): string
     {
-        return 'ups';
+        return $this->shippingProviderKey ?? 'ups';
+    }
+
+    /**
+     * @param string $shippingProviderKey
+     */
+    public function setShippingProviderKey(string $shippingProviderKey): void
+    {
+        $this->shippingProviderKey = $shippingProviderKey;
     }
 
     /**

@@ -30,3 +30,14 @@ We will evaluate code based on these criteria:
 - Whether tests pass (`php bin/phpunit ./tests`)
 - Code readability and quality
 - System flexibility and extensibility
+
+### Result
+`bin/console app:register:shipment` implemented. `ups`, `omniva` or `dhl` should be provided as arguments.
+
+To implement more providers new provider class extending `AbstractProvider` should be created. New provider
+query configuration has to be constructed via `buildQuery` method. Also, new provider class has to be added to
+`services.yaml` file and. 
+
+`src/Enum/Providers` holds provider keys as constants to use across the project. 
+
+
